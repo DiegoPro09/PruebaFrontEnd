@@ -1,0 +1,52 @@
+{
+    "general":{
+        "save": "Save",
+        "upload": "Upload",
+        "no-data": "No Data"
+    },
+    "input":{
+        "labels":{
+            "name-movie": "Name of a movie or series" ,
+            "name-character": "Name",
+            "description-character": "Description",
+            "image-character": "Image"
+        },
+        "tooltip-places":{
+            "name-movie": "Enter the name of a movie or series",
+            "placeholders":{
+                "name-character": "Character's name",
+                "description-character": "Character description",
+                "image-character": "Character image"
+            },
+            "tooltips":{
+                "name-character": "Enter a character name",
+                "description-character": "Enter the character description",
+                "image-character": "Enter the character image"
+            }
+        }
+    },
+    "main":{
+        "text-main":{
+            "first-half": "Please enter the name of ",
+            "first": "the first ",
+            "second-half": "movie o series",
+            "second": "the second "
+        },
+        "next": "Next"
+    },
+    "buttons":{
+        "-characters": " - Characters",
+        "view-add": "View/Add characters"
+    },
+    "localstorage":{
+        "_char": "_characters"
+    },
+    "messages":{
+        "success": "Character saved successfully"
+    },
+    "validations":{
+        "name": "Name is required",
+        "description": "Description is required",
+        "image": "Image is required"
+    }
+}

@@ -1,0 +1,52 @@
+{
+    "general":{
+        "save": "Guardar",
+        "upload": "Subir",
+        "no-data": "No hay datos"
+    },
+    "input":{
+        "labels":{
+            "name-movie": "Nombre de una pelicula o serie",
+            "name-character": "Nombre",
+            "description-character": "Descripcion",
+            "image-character": "Imagen" 
+        },
+        "tooltip-places":{
+            "name-movie": "Ingrese el nombre de una pelicula o serie",
+            "placeholders":{
+                "name-character": "Nombre del personaje",
+                "description-character": "Descripcion del personaje",
+                "image-character": "Imagen del personaje"
+            },
+            "tooltips":{
+                "name-character": "Ingrese el nombre de un personaje",
+                "description-character": "Ingrese la descripcion del personaje",
+                "image-character": "Ingrese la imagen del personaje"
+            }
+        }
+    },
+    "main":{
+        "text-main":{
+            "first-half": "Por favor ingrese el nombre de ",
+            "first": "la primera ",
+            "second-half": "pelicula o serie",
+            "second": "la segunda "
+        },
+        "next": "Siguiente"
+    },
+    "buttons":{
+        "-characters": " - Personajes",
+        "view-add": "Ver/Agregar personajes"
+    },
+    "localstorage":{
+        "_char": "_personajes"
+    },
+    "messages":{
+        "success": "Personaje guardado correctamente"
+    },
+    "validations":{
+        "name": "Debe ingresar en nombre",
+        "description": "Debe ingresar la descripcion",
+        "image": "Debe ingresar la imagen"
+    }
+}
