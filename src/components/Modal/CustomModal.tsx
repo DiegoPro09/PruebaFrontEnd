@@ -1,6 +1,7 @@
-import { Alert, Button, Divider, Modal, Tooltip } from 'antd';
+import { Alert, Divider, Modal, Tooltip } from 'antd';
 import React, { useCallback, useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { CustomModalButton } from './styles/ModalStyles';
 
 interface customModalProps{
     disabled?:boolean,
@@ -13,9 +14,10 @@ interface customModalProps{
     buttonTitle: string,
     onClose?:()=>void,
     shape?:string,
+    type:string
 } 
 
-export const CustomModal:React.FC<customModalProps> = ({action, onClose, disabled, closeOn, children, title, tooltiptitle, error ,buttonTitle, shape}) => {
+export const CustomModal:React.FC<customModalProps> = ({action, onClose, disabled, closeOn, children, title, tooltiptitle, error ,buttonTitle, shape, type}) => {
     const [modal,setModal] = useState(false)
     const { t } = useTranslation('global')
 
@@ -38,11 +40,11 @@ export const CustomModal:React.FC<customModalProps> = ({action, onClose, disable
     
     return (
         <>
-            <Tooltip title={tooltiptitle} placement="bottomRight">
-                <Button disabled={disabled} shape={shape === 'default' ? 'default' : 'circle'} onClick={openModal} style={{marginRight: '5px'}}>
+            <Tooltip title={tooltiptitle} placement="bottom">
+                <CustomModalButton typeButton={type} disabled={disabled} shape={shape === 'default' ? 'default' : 'circle'} onClick={openModal} style={{marginRight: '5px'}}>
                     {buttonTitle ? buttonTitle : ''}
-                </Button>
-            </Tooltip>
+                </CustomModalButton>
+            </Tooltip> 
 
             <Modal
                 title = {title}

@@ -1,14 +1,16 @@
 import { PlusOutlined } from '@ant-design/icons';
-import { Form, Input, Row, Col, FormInstance, Upload } from 'antd';
+import { Form, Row, Col, FormInstance, Upload } from 'antd';
 import { useTranslation } from 'react-i18next';
 import FormValidations from '../../shared/configs/validations';
+import { StyleInput } from './styles/FormStyles';
 
 interface CustomFormProps {
   form: FormInstance
-  fields: Array<{ name: string, label: string, placeholder: string, tooltip: string }>
+  fields: Array<{ name: string, label?: string, placeholder: string, tooltip: string }>,
+  mainInput:boolean
 }
 
-export const CustomForm: React.FC<CustomFormProps> = ({ form, fields }: CustomFormProps) => {
+export const CustomForm: React.FC<CustomFormProps> = ({ form, fields, mainInput }: CustomFormProps) => {
   const { t } = useTranslation('global')
   const validations = FormValidations()
   
@@ -25,7 +27,7 @@ export const CustomForm: React.FC<CustomFormProps> = ({ form, fields }: CustomFo
     <Form form={form} layout="vertical" autoComplete="on">
       <Row gutter={[10, 10]}>
         {fields.map((field, index) => (
-          <Col key={index} span={12}>
+          <Col key={index} span={fields.length > 1 ? 12 : 24}>
             {field.name === 'image' ? (
               <Form.Item name={field.name} label={field.label} valuePropName="file" getValueFromEvent={normFile} rules={validations.image}>
                 <Upload listType="picture-card" beforeUpload={()=>false} maxCount={1}>
@@ -37,7 +39,7 @@ export const CustomForm: React.FC<CustomFormProps> = ({ form, fields }: CustomFo
               </Form.Item>
             ) : (
               <Form.Item name={field.name} label={field.label} tooltip={field.tooltip} rules={validations[field.name]}>
-                <Input placeholder={field.placeholder} />
+                <StyleInput placeholder={field.placeholder} mainInput={mainInput}/>
               </Form.Item>
             )}
           </Col>
