@@ -5,6 +5,7 @@ import { CustomList } from "../../components/List/CustomList";
 import { useSaveStorage } from "../../shared/hooks/useSaveStorage";
 import { useTranslation } from "react-i18next";
 import FormFields from "../../shared/configs/formConfig";
+import { FirstButtonContainer } from "./styles/FirstButtonStyle";
 
 export const FirstButtonApp:React.FC<({name:string})> = ({name}) =>{
     const [form] = Form.useForm<any>()
@@ -22,7 +23,7 @@ export const FirstButtonApp:React.FC<({name:string})> = ({name}) =>{
     }
 
     return (
-        <>
+        <FirstButtonContainer>
             <CustomModal 
                 error={error} 
                 action={handleAction} 
@@ -30,11 +31,12 @@ export const FirstButtonApp:React.FC<({name:string})> = ({name}) =>{
                 title={`${name}${t('buttons.-characters')}`} 
                 tooltiptitle={t('buttons.view-add')} 
                 buttonTitle={name}
-                shape='default'
+                shape='default' 
+                type={'first'}
             >
-                <CustomForm form={form} fields={fields}/>
+                <CustomForm form={form} fields={fields} mainInput={false}/>
                 <CustomList nameMedia={`${name}${t('localstorage._char')}`} reloadVersion={reloadVersion} setReloadVersion={setReloadVersion}/>
             </CustomModal>
-        </>
+        </FirstButtonContainer>
     )
 }

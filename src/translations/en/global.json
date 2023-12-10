@@ -27,10 +27,14 @@
     },
     "main":{
         "text-main":{
+            "welcome": "WELCOME!",
+            "wonderful": "WONDERFUL!!",
+            "about": "This system allows you to load two movies or series, and then enter characters with specific data, enjoy!",
             "first-half": "Please enter the name of ",
             "first": "the first ",
             "second-half": "movie o series",
-            "second": "the second "
+            "second": "the second ",
+            "explain": "Now you can click on any button and load the characters"
         },
         "next": "Next"
     },

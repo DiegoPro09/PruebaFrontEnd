@@ -27,10 +27,14 @@
     },
     "main":{
         "text-main":{
+            "welcome": "BIENVENIDO/A!",
+            "wonderful": "MARAVILLOSO!!",
+            "about": "Este sistema le permite cargar dos peliculas o series, y luego ingresar personajes con datos especificos, que lo disfrutes!",
             "first-half": "Por favor ingrese el nombre de ",
             "first": "la primera ",
             "second-half": "pelicula o serie",
-            "second": "la segunda "
+            "second": "la segunda ",
+            "explain": "Ahora puede hacer click en algun boton y cargar los personajes"
         },
         "next": "Siguiente"
     },
