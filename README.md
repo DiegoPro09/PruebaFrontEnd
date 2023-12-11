@@ -70,3 +70,6 @@ Although I've only had a short time using Redux, I wouldn't mind learning more a
 
 ### `What is progressive rendering?`
 Progressive rendering is a web design and development technique that improves the user experience by gradually displaying the content of a page as it loads. Instead of waiting for the entire page to fully load before displaying something to the user, content is presented progressively as it becomes available.
+
+## Linkedin
+### `www.linkedin.com/in/diegoevallejos`
