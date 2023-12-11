@@ -1,6 +1,7 @@
 import { Rule } from "antd/es/form";
 import { useTranslation } from "react-i18next";
 
+//Validaciones preconfiguradas y personalizadas para utilizar dentro de los formularios
 const FormValidations = () =>{
     const { t } = useTranslation('global')
 

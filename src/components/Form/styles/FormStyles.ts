@@ -5,6 +5,7 @@ interface StyledInputProps {
     mainInput: boolean;
 }
 
+//Input personalizado en el que recibe una prop desde la pagina principal, aclarando asi si se debe implementar estos estilos o los inputs permanecen predeterminados
 export const StyleInput = styled(Input)<StyledInputProps>`
      ${(props) =>
         props.mainInput && `

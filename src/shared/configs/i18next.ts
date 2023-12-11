@@ -3,6 +3,7 @@ import { initReactI18next } from 'react-i18next';
 import englobal from '../../translations/en/global.json';
 import esglobal from '../../translations/es/global.json';
 
+//Configuracion de la libreria i18next, seteando que idiomas tiene que traducir
 i18next
     .use(initReactI18next)
     .init({
@@ -14,7 +15,7 @@ i18next
                 global: englobal
             }
         },
-        lng: 'es',
+        lng: 'es', //Idioma predeterminado de la aplicacion
         interpolation: {
             escapeValue: false,
         },

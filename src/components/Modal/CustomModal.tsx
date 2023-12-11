@@ -17,6 +17,7 @@ interface customModalProps{
     type:string
 } 
 
+//Componente Modal reutilizable
 export const CustomModal:React.FC<customModalProps> = ({action, onClose, disabled, closeOn, children, title, tooltiptitle, error ,buttonTitle, shape, type}) => {
     const [modal,setModal] = useState(false)
     const { t } = useTranslation('global')
@@ -41,6 +42,7 @@ export const CustomModal:React.FC<customModalProps> = ({action, onClose, disable
     return (
         <>
             <Tooltip title={tooltiptitle} placement="bottom">
+                {/* Boton personalizado que acciona la apertura del modal */}
                 <CustomModalButton typeButton={type} disabled={disabled} shape={shape === 'default' ? 'default' : 'circle'} onClick={openModal} style={{marginRight: '5px'}}>
                     {buttonTitle ? buttonTitle : ''}
                 </CustomModalButton>
@@ -56,7 +58,7 @@ export const CustomModal:React.FC<customModalProps> = ({action, onClose, disable
                 onOk={handleOk} 
             >   
                 <Divider />
-                {children}
+                {children} {/* Propiedad children que indica que dentro puede ir cualquier componente o elemento html haciendolo reutilizable y configurable */}
                 {error && <Alert message={error} type="error" showIcon /> }
             </Modal>
         </>
