@@ -1,14 +1,14 @@
 import { SecondButtonApp } from "../models/SecondButton/SecondButtonApp";
 import { FirstButtonApp } from "../models/FirstButton/FirstButtonApp";
 import { CustomForm } from "../components/Form/CustomForm";
-import { Flex, Form, Switch } from "antd";
+import { Flex, Form } from "antd";
 import { useEffect, useState } from "react";
 import { useTranslation } from 'react-i18next';
 import Title from "antd/es/typography/Title";
 import {  CustomButton, DivContainer, MainContent, MainText, StyleDivider } from "./styles/CustomStyles";
-import i18next from "i18next";
+import { CustomSwitch } from "../components/Switch/CustomSwitch";
 
-function App() {
+function App() { 
   const [form] = Form.useForm<any>()
   const [firstValue, setFirstValue] = useState('')
   const [secondValue, setSecondValue] = useState('')
@@ -64,22 +64,11 @@ function App() {
     </>
   );
 
-  const toggleLanguage = (checked:any) => {
-    const newLanguage = checked ? 'es' : 'en'; // Cambia 'es' y 'en' según tus códigos de idioma
-    i18next.changeLanguage(newLanguage);
-  };
-
   return (
     <DivContainer>
-      <div>
-        <Switch
-          checkedChildren="ES"
-          unCheckedChildren="EN"
-          defaultChecked={i18next.language === 'es'}
-          onChange={toggleLanguage}
-        />
-      </div>
       <MainContent className="mainText">
+        <CustomSwitch />
+        
         <MainText>
           {renderTitle()}
           {renderSubtitle()}

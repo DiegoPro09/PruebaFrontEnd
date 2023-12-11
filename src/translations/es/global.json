@@ -4,6 +4,9 @@
         "upload": "Subir",
         "no-data": "No hay datos"
     },
+    "tooltips":{
+        "lenguage": "Cambiar el idioma"
+    },
     "input":{
         "labels":{
             "name-movie": "Nombre de una pelicula o serie",
