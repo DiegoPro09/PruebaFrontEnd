@@ -1,19 +1,21 @@
 import React, { useEffect, useState } from 'react';
 import { Avatar, Divider, List} from 'antd';
 import { useTranslation } from 'react-i18next';
+import { StyleList } from './styles/StyledList';
 
+//Interface DataType en la que se requieren los campos principales del formulario para mostrar los datos del personaje
 interface DataType {
     name?: string,
     description?:string,
     image?:any,
-    nameMedia:string
 }
   
-export const CustomList: React.FC<DataType & { reloadVersion: number, setReloadVersion: React.Dispatch<React.SetStateAction<number>> }> = ({ nameMedia, reloadVersion, setReloadVersion }) => {
+export const CustomList: React.FC<DataType & { reloadVersion: number, nameMedia:string}> = ({ nameMedia, reloadVersion}) => {
     const [data, setData] = useState<DataType[]>([])
-    const nameStorage = nameMedia.replace(/\s/g, '')
+    const nameStorage = nameMedia.replace(/\s/g, '') //Se elimina los espacios dentro del nombre de la pelicula o serie para asi guardarlo dentro del localstorage
     const { t } = useTranslation('global')
   
+    //Hook que trae los datos del localstorage dependiendo del nombre de la pelicula o serie para luego mostrarlas en la lista
     useEffect(() => {
         // Obtener datos desde el localStorage
         const storedData = localStorage.getItem(nameStorage)
@@ -24,20 +26,12 @@ export const CustomList: React.FC<DataType & { reloadVersion: number, setReloadV
     }, [nameStorage, reloadVersion])
   
     return (
-        <div
-            id="scrollableDiv"
-            style={{
-                height: 400,
-                overflow: 'auto',
-                padding: '0 16px',
-                border: '1px solid rgba(140, 140, 140, 0.35)',
-            }}
-        >
+        <StyleList id="scrollableDiv" >
             <List
                 dataSource={data}
                 renderItem={(item) => (
                     <List.Item key={item.name}>
-                    <List.Item.Meta
+                    <List.Item.Meta //Componente que renderizara la imagen del personaje
                         avatar={<Avatar src={item.image} size={70} shape='square'/>}
                         title={item.name}
                         description={item.description}
@@ -45,7 +39,7 @@ export const CustomList: React.FC<DataType & { reloadVersion: number, setReloadV
                     </List.Item>
                 )}
             />
-            {data.length === 0 && <Divider plain>{t('general.no-data')}</Divider>}
-        </div>
+            {data.length === 0 && <Divider plain>{t('general.no-data')}</Divider>} 
+        </StyleList>
     )
 }

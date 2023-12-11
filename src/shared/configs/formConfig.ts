@@ -1,5 +1,6 @@
 import { useTranslation } from "react-i18next";
 
+//Fields preconfigurados para el uso de los mismos en los componentes de cada boton, se pueden añadir o eliminar la cantidad que se desee
 const FormFields = () => {
     const { t } = useTranslation('global')
 

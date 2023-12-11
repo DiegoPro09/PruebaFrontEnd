@@ -2,6 +2,8 @@ import { Button, Divider } from "antd";
 import Title from "antd/es/typography/Title";
 import styled from "styled-components";
 
+//Componentes personalizados que se mostraran en la pagina principañ
+
 export const DivContainer = styled.div`
     height: 100vh;
     display:flex;
