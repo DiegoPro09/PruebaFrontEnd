@@ -4,6 +4,9 @@
         "upload": "Upload",
         "no-data": "No Data"
     },
+    "tooltips":{
+        "lenguage": "Change lenguage"
+    },
     "input":{
         "labels":{
             "name-movie": "Name of a movie or series" ,
